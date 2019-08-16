@@ -11,7 +11,7 @@
 #ifndef AIRFRAMECOMPONENT_H
 #define AIRFRAMECOMPONENT_H
 
-#include "VehicleComponent.h"
+#include "VehicleSetup/VehicleComponent.h"
 
 /// @file
 ///     @brief The Airframe VehicleComponent is used to set the SYS_AUTOSTART airframe id.

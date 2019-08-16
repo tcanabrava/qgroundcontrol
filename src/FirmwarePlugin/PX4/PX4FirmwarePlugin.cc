@@ -14,13 +14,16 @@
 #include "PX4FirmwarePlugin.h"
 #include "PX4ParameterMetaData.h"
 #include "QGCApplication.h"
-#include "PX4AutoPilotPlugin.h"
-#include "PX4AdvancedFlightModesController.h"
-#include "PX4SimpleFlightModesController.h"
-#include "AirframeComponentController.h"
-#include "SensorsComponentController.h"
-#include "PowerComponentController.h"
-#include "RadioComponentController.h"
+
+#include "AutoPilotPlugins/PX4/PX4AutoPilotPlugin.h"
+#include "AutoPilotPlugins/PX4/PX4AdvancedFlightModesController.h"
+#include "AutoPilotPlugins/PX4/PX4SimpleFlightModesController.h"
+#include "AutoPilotPlugins/PX4/AirframeComponentController.h"
+#include "AutoPilotPlugins/PX4/SensorsComponentController.h"
+#include "AutoPilotPlugins/PX4/PowerComponentController.h"
+
+#include "AutoPilotPlugins/Common/RadioComponentController.h"
+
 #include "QGCCameraManager.h"
 #include "QGCFileDownload.h"
 

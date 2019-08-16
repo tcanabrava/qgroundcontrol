@@ -11,7 +11,7 @@
 #ifndef APMAirframeComponent_H
 #define APMAirframeComponent_H
 
-#include "VehicleComponent.h"
+#include "VehicleSetup/VehicleComponent.h"
 
 class APMAirframeComponent : public VehicleComponent
 {

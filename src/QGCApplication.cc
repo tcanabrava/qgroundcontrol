@@ -48,11 +48,13 @@
 #include "ViewWidgetController.h"
 #include "ParameterEditorController.h"
 #include "CustomCommandWidgetController.h"
-#include "ESP8266ComponentController.h"
+
+#include "AutoPilotPlugins/Common/ESP8266ComponentController.h"
+#include "AutoPilotPlugins/Common/SyslinkComponentController.h"
+
 #include "ScreenToolsController.h"
 #include "QGCFileDialogController.h"
 #include "RCChannelMonitorController.h"
-#include "SyslinkComponentController.h"
 #include "AutoPilotPlugin.h"
 #include "VehicleComponent.h"
 #include "FirmwarePluginManager.h"

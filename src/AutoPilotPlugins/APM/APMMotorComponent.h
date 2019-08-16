@@ -11,7 +11,7 @@
 #ifndef APMMotorComponent_H
 #define APMMotorComponent_H
 
-#include "MotorComponent.h"
+#include "AutoPilotPlugins/Common/MotorComponent.h"
 
 class APMMotorComponent : public MotorComponent
 {

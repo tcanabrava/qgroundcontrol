@@ -9,9 +9,12 @@
 
 
 #include "APMAutoPilotPlugin.h"
+
+#include "AutoPilotPlugins/Common/ESP8266Component.h"
+
 #include "UAS.h"
-#include "FirmwarePlugin/APM/APMParameterMetaData.h"  // FIXME: Hack
-#include "FirmwarePlugin/APM/APMFirmwarePlugin.h"  // FIXME: Hack
+#include "FirmwarePlugin/APM/APMParameterMetaData.h"
+#include "FirmwarePlugin/APM/APMFirmwarePlugin.h"
 #include "FirmwarePlugin/APM/ArduCopterFirmwarePlugin.h"
 #include "VehicleComponent.h"
 #include "APMAirframeComponent.h"
@@ -25,7 +28,6 @@
 #include "APMCameraComponent.h"
 #include "APMLightsComponent.h"
 #include "APMSubFrameComponent.h"
-#include "ESP8266Component.h"
 #include "APMHeliComponent.h"
 #include "QGCApplication.h"
 #include "ParameterManager.h"

@@ -11,19 +11,22 @@
 #ifndef PX4AUTOPILOT_H
 #define PX4AUTOPILOT_H
 
+#include "AutoPilotPlugins/Common/ESP8266Component.h"
+#include "AutoPilotPlugins/Common/MotorComponent.h"
+#include "AutoPilotPlugins/Common/SyslinkComponent.h"
+
 #include "AutoPilotPlugin.h"
 #include "PX4AirframeLoader.h"
 #include "AirframeComponent.h"
 #include "PX4RadioComponent.h"
-#include "ESP8266Component.h"
+
+
 #include "FlightModesComponent.h"
 #include "SensorsComponent.h"
 #include "SafetyComponent.h"
 #include "CameraComponent.h"
 #include "PowerComponent.h"
-#include "MotorComponent.h"
 #include "PX4TuningComponent.h"
-#include "SyslinkComponent.h"
 #include "Vehicle.h"
 
 #include <QImage>

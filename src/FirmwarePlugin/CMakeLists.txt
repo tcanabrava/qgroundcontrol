@@ -22,6 +22,8 @@ add_library(FirmwarePlugin
 target_link_libraries(FirmwarePlugin
 	PRIVATE
 		qgc
+		AutoPilotPluginApm
+		AutoPilotPluginPx4
 )
 
 target_include_directories(FirmwarePlugin

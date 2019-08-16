@@ -1,0 +1,57 @@
+add_library(AutoPilotPluginApm
+	APMAirframeComponent.cc
+	APMAirframeComponentController.cc
+	APMAutoPilotPlugin.cc
+	APMCameraComponent.cc
+	APMCompassCal.cc
+	APMFlightModesComponent.cc
+	APMFlightModesComponentController.cc
+	APMHeliComponent.cc
+	APMLightsComponent.cc
+	APMMotorComponent.cc
+	APMPowerComponent.cc
+	APMRadioComponent.cc
+	APMSafetyComponent.cc
+	APMSensorsComponent.cc
+	APMSensorsComponentController.cc
+	APMSubFrameComponent.cc
+	APMTuningComponent.cc
+)
+
+add_custom_target(
+    AutoPilotPluginApmQml
+SOURCES
+    APMAirframeComponent.qml
+    APMPowerComponent.qml
+    APMSafetyComponentSummaryRover.qml
+    APMAirframeComponentSummary.qml
+    APMPowerComponentSummary.qml
+    APMSafetyComponentSummarySub.qml
+    APMCameraComponent.qml              
+    APMRadioComponentSummary.qml         
+    APMSensorsComponent.qml
+    APMCameraComponentSummary.qml       
+    APMSafetyComponentCopter.qml         
+    APMSensorsComponentSummary.qml
+    APMCameraSubComponent.qml           
+    APMSafetyComponentPlane.qml          
+    APMSubFrameComponent.qml
+    APMFlightModesComponent.qml         
+    APMSafetyComponent.qml               
+    APMSubFrameComponentSummary.qml
+    APMFlightModesComponentSummary.qml  
+    APMSafetyComponentRover.qml          
+    APMSubMotorComponent.qml
+    APMHeliComponent.qml                
+    APMSafetyComponentSub.qml            
+    APMTuningComponentCopter.qml
+    APMLightsComponent.qml              
+    APMSafetyComponentSummaryCopter.qml  
+    APMTuningComponentSub.qml
+    APMLightsComponentSummary.qml       
+    APMSafetyComponentSummaryPlane.qml
+    APMNotSupported.qml                 
+    APMSafetyComponentSummary.qml
+)
+
+target_link_libraries(AutoPilotPluginApm PRIVATE qgc)

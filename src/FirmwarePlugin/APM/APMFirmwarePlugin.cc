@@ -8,12 +8,14 @@
  ****************************************************************************/
 
 #include "APMFirmwarePlugin.h"
-#include "APMAutoPilotPlugin.h"
+
+#include "AutoPilotPlugins/APM/APMAirframeComponentController.h"
+#include "AutoPilotPlugins/APM/APMAutoPilotPlugin.h"
+#include "AutoPilotPlugins/APM/APMFlightModesComponentController.h"
+#include "AutoPilotPlugins/APM/APMSensorsComponentController.h"
+
 #include "QGCMAVLink.h"
 #include "QGCApplication.h"
-#include "APMFlightModesComponentController.h"
-#include "APMAirframeComponentController.h"
-#include "APMSensorsComponentController.h"
 #include "MissionManager.h"
 #include "ParameterManager.h"
 #include "QGCFileDownload.h"

@@ -152,6 +152,10 @@ target_link_libraries(qgc
 		api
 		Audio
 		AutoPilotPlugins
+		AutoPilotPluginApm
+		AutoPilotPluginPx4
+		AutoPilotPluginCommon
+		AutoPilotPluginsGeneric
 		Camera
 		comm
 		FactSystem

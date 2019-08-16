@@ -1,0 +1,48 @@
+add_library(AutoPilotPluginPx4
+	AirframeComponent.cc
+	AirframeComponentAirframes.cc
+	AirframeComponentController.cc
+	CameraComponent.cc
+	FlightModesComponent.cc
+	PowerComponent.cc
+	PowerComponentController.cc
+	PX4AdvancedFlightModesController.cc
+	PX4AirframeLoader.cc
+	PX4AutoPilotPlugin.cc
+	PX4RadioComponent.cc
+	PX4SimpleFlightModesController.cc
+	PX4TuningComponent.cc
+	SafetyComponent.cc
+	SensorsComponent.cc
+	SensorsComponentController.cc
+)
+
+add_custom_target(
+    AutoPilotPluginsPx4Qml
+SOURCES
+    AirframeComponent.qml            
+    PowerComponent.qml            
+    PX4SimpleFlightModes.qml      
+    SafetyComponentSummary.qml
+    AirframeComponentSummary.qml     
+    PowerComponentSummary.qml     
+    PX4TuningComponentCopter.qml  
+    SensorsComponent.qml
+    CameraComponent.qml              
+    PX4AdvancedFlightModes.qml    
+    PX4TuningComponentPlane.qml   
+    SensorsComponentSummaryFixedWing.qml
+    CameraComponentSummary.qml       
+    PX4FlightModes.qml            
+    PX4TuningComponentVTOL.qml    
+    SensorsComponentSummary.qml
+    FlightModesComponentSummary.qml  
+    PX4RadioComponentSummary.qml  
+    SafetyComponent.qml           
+    SensorsSetup.qml
+)
+
+target_link_libraries(AutoPilotPluginPx4
+	PRIVATE
+		qgc
+)
