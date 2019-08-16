@@ -12,7 +12,7 @@
 #include <QDebug>
 
 #include "SimpleMissionItem.h"
-#include "FirmwarePluginManager.h"
+#include "FirmwarePlugin/FirmwarePluginManager.h"
 #include "QGCApplication.h"
 #include "JsonHelper.h"
 #include "MissionCommandTree.h"

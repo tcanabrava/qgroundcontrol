@@ -149,8 +149,6 @@ set(QGC_RESOURCES
 	qgroundcontrol.qrc
 	qgcimages.qrc
 
-	src/FirmwarePlugin/APM/APMResources.qrc
-	src/FirmwarePlugin/PX4/PX4Resources.qrc
 	src/Airmap/airmap.qrc
 	src/Airmap/dummy/airmap_dummy.qrc
 	)

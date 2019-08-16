@@ -57,7 +57,7 @@
 #include "RCChannelMonitorController.h"
 #include "AutoPilotPlugin.h"
 #include "VehicleComponent.h"
-#include "FirmwarePluginManager.h"
+#include "FirmwarePlugin/FirmwarePluginManager.h"
 #include "MultiVehicleManager.h"
 #include "Vehicle.h"
 #include "JoystickConfigController.h"

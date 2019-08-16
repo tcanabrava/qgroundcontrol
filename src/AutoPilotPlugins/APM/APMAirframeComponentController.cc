@@ -13,8 +13,8 @@
 #include "QGCApplication.h"
 #include "QGCFileDownload.h"
 #include "ParameterManager.h"
-#include "ArduCopterFirmwarePlugin.h"
-#include "ArduRoverFirmwarePlugin.h"
+#include "FirmwarePlugin/APM/ArduCopterFirmwarePlugin.h"
+#include "FirmwarePlugin/APM/ArduRoverFirmwarePlugin.h"
 
 #include <QVariant>
 #include <QQmlProperty>

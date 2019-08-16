@@ -12,7 +12,7 @@
 #include "QGCLoggingCategory.h"
 #include "QGCApplication.h"
 #include "UASMessageHandler.h"
-#include "FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
 #include "UAS.h"
 #include "JsonHelper.h"
 

@@ -10,7 +10,7 @@
 #include "MissionCommandList.h"
 #include "FactMetaData.h"
 #include "Vehicle.h"
-#include "FirmwarePluginManager.h"
+#include "FirmwarePlugin/FirmwarePluginManager.h"
 #include "QGCApplication.h"
 #include "QGroundControlQmlGlobal.h"
 #include "JsonHelper.h"

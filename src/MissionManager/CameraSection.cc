@@ -9,7 +9,7 @@
 
 #include "CameraSection.h"
 #include "SimpleMissionItem.h"
-#include "FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
 
 QGC_LOGGING_CATEGORY(CameraSectionLog, "CameraSectionLog")
 

@@ -17,7 +17,7 @@
 #include "JsonHelper.h"
 #include "QGCMAVLink.h"
 #include "QGCApplication.h"
-#include "FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
 #include "ParameterManager.h"
 #include "Bootloader.h"
 

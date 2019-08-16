@@ -10,7 +10,7 @@
 #ifndef PX4FirmwarePluginFactory_H
 #define PX4FirmwarePluginFactory_H
 
-#include "FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
 
 class PX4FirmwarePlugin;
 

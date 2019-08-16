@@ -14,7 +14,7 @@
 #ifndef APMFirmwarePlugin_H
 #define APMFirmwarePlugin_H
 
-#include "FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
 #include "QGCLoggingCategory.h"
 #include "APMParameterMetaData.h"
 

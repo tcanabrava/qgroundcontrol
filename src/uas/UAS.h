@@ -18,7 +18,7 @@
 #include <QVector3D>
 #include "QGCMAVLink.h"
 #include "Vehicle.h"
-#include "FirmwarePluginManager.h"
+#include "FirmwarePlugin/FirmwarePluginManager.h"
 
 #ifndef __mobile__
 #include "FileManager.h"

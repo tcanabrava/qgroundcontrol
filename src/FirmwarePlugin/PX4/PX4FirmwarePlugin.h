@@ -14,7 +14,7 @@
 #ifndef PX4FirmwarePlugin_H
 #define PX4FirmwarePlugin_H
 
-#include "FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
 #include "ParameterManager.h"
 #include "PX4ParameterMetaData.h"
 

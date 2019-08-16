@@ -9,7 +9,7 @@
 
 #include "SpeedSection.h"
 #include "JsonHelper.h"
-#include "FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
 #include "SimpleMissionItem.h"
 
 const char* SpeedSection::_flightSpeedName = "FlightSpeed";

@@ -12,7 +12,7 @@
 ///     @author Don Gagne <don@thegagnes.com>
 
 #include "PX4FirmwarePluginFactory.h"
-#include "PX4/PX4FirmwarePlugin.h"
+#include "PX4FirmwarePlugin.h"
 
 PX4FirmwarePluginFactory PX4FirmwarePluginFactory;
 

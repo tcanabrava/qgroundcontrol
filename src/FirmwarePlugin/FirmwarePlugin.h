@@ -14,8 +14,8 @@
 #ifndef FirmwarePlugin_H
 #define FirmwarePlugin_H
 
-#include "QGCMAVLink.h"
-#include "VehicleComponent.h"
+#include "comm/QGCMAVLink.h"
+#include "VehicleSetup/VehicleComponent.h"
 #include "AutoPilotPlugin.h"
 #include "GeoFenceManager.h"
 #include "RallyPointManager.h"

@@ -10,7 +10,7 @@
 #ifndef APMFirmwarePluginFactory_H
 #define APMFirmwarePluginFactory_H
 
-#include "FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
 
 class ArduCopterFirmwarePlugin;
 class ArduPlaneFirmwarePlugin;

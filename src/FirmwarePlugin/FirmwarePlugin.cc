@@ -32,6 +32,7 @@ const QString FirmwarePlugin::px4FollowMeFlightMode(QObject::tr("Follow Me"));
 FirmwarePluginFactory::FirmwarePluginFactory(void)
 {
     FirmwarePluginFactoryRegister::instance()->registerPluginFactory(this);
+    qDebug() << "Registering plugin factory!";
 }
 
 QList<MAV_TYPE> FirmwarePluginFactory::supportedVehicleTypes(void) const

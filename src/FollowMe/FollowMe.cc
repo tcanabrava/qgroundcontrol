@@ -11,7 +11,7 @@
 #include <cmath>
 
 #include "MultiVehicleManager.h"
-#include "FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
 #include "MAVLinkProtocol.h"
 #include "FollowMe.h"
 #include "Vehicle.h"

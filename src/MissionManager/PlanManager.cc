@@ -13,7 +13,7 @@
 
 #include "PlanManager.h"
 #include "Vehicle.h"
-#include "FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
 #include "MAVLinkProtocol.h"
 #include "QGCApplication.h"
 #include "MissionCommandTree.h"

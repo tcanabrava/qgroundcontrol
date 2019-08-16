@@ -32,7 +32,6 @@
 #ifndef NO_SERIAL_LINK
 #include "SerialLink.h"
 #endif
-#include "FirmwarePluginManager.h"
 #include "QGCLoggingCategory.h"
 #include "Vehicle.h"
 #include "Joystick.h"

@@ -13,7 +13,7 @@
 
 #include "AutoPilotPlugin.h"
 #include "QGCApplication.h"
-#include "FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
 
 AutoPilotPlugin::AutoPilotPlugin(Vehicle* vehicle, QObject* parent)
     : QObject(parent)

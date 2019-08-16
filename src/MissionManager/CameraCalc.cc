@@ -10,7 +10,7 @@
 #include "CameraCalc.h"
 #include "JsonHelper.h"
 #include "Vehicle.h"
-#include "CameraMetaData.h"
+#include "FirmwarePlugin/CameraMetaData.h"
 
 #include <QQmlEngine>
 

@@ -1,9 +1,9 @@
+# Todo: Verify why splitting the Plugins into
+# static libs breaks the build.
+# add_subdirectory(APM)
+# add_subdirectory(PX4)
 
 add_library(FirmwarePlugin
-	CameraMetaData.cc
-	FirmwarePlugin.cc
-	FirmwarePluginManager.cc
-
 	APM/APMFirmwarePlugin.cc
 	APM/APMFirmwarePluginFactory.cc
 	APM/APMParameterMetaData.cc
@@ -17,18 +17,13 @@ add_library(FirmwarePlugin
 	PX4/PX4FirmwarePluginFactory.cc
 	PX4/PX4ParameterMetaData.cc
 	PX4/PX4Resources.qrc
+
+	CameraMetaData.cc
+	FirmwarePlugin.cc
+	FirmwarePluginManager.cc
 )
 
 target_link_libraries(FirmwarePlugin
 	PRIVATE
 		qgc
-		AutoPilotPluginApm
-		AutoPilotPluginPx4
 )
-
-target_include_directories(FirmwarePlugin
-	INTERFACE
-		${CMAKE_CURRENT_SOURCE_DIR}
-                APM
-	)
-

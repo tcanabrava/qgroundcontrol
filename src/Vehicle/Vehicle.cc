@@ -14,9 +14,9 @@
 
 #include "Vehicle.h"
 #include "MAVLinkProtocol.h"
-#include "FirmwarePluginManager.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePluginManager.h"
 #include "LinkManager.h"
-#include "FirmwarePlugin.h"
 #include "UAS.h"
 #include "JoystickManager.h"
 #include "MissionManager.h"

@@ -13,7 +13,7 @@
 #include "MultiVehicleManager.h"
 #include "MissionManager.h"
 #include "CoordinateVector.h"
-#include "FirmwarePlugin.h"
+#include "FirmwarePlugin/FirmwarePlugin.h"
 #include "QGCApplication.h"
 #include "SimpleMissionItem.h"
 #include "SurveyComplexItem.h"

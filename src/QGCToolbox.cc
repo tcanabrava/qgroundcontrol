@@ -9,7 +9,7 @@
 
 
 #include "FactSystem.h"
-#include "FirmwarePluginManager.h"
+#include "FirmwarePlugin/FirmwarePluginManager.h"
 #include "AudioOutput.h"
 #ifndef __mobile__
 #include "GPSManager.h"
