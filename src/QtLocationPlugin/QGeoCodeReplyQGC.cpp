@@ -159,8 +159,8 @@ QGeoCodeReplyQGC::QGeoCodeReplyQGC(QNetworkReply *reply, QObject *parent)
 :   QGeoCodeReply(parent), m_reply(reply)
 {
     connect(m_reply, &QNetworkReply::finished, this, &QGeoCodeReplyQGC::networkReplyFinished);
-    connect(m_reply, SIGNAL(error(QNetworkReply::NetworkError)),
-            this, SLOT(networkReplyError(QNetworkReply::NetworkError)));
+    connect(m_reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
+            this, &QGeoCodeReplyQGC::networkReplyError);
 
     setLimit(1);
     setOffset(0);
