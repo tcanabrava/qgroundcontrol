@@ -190,7 +190,7 @@ QGeoTiledMapReplyQGC::cacheError(QGCMapTask::TaskType type, QString /*errorStrin
         _reply = _networkManager->get(_request);
         _reply->setParent(nullptr);
         connect(_reply, &QNetworkReply::finished, this, &QGeoTiledMapReplyQGC::networkReplyFinished);
-        connect(_reply, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(networkReplyError(QNetworkReply::NetworkError)));
+        connect(_reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error), this, &QGeoTiledMapReplyQGC::networkReplyError);
 #if !defined(__mobile__)
         _networkManager->setProxy(proxy);
 #endif
