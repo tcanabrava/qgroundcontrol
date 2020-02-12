@@ -541,6 +541,8 @@ VideoReceiver::start()
     if (_videoSink == nullptr) {
         qCritical() << "VideoReceiver::start() failed because video sink is not set";
         return;
+    } else {
+        qDebug() << "Video sink correctly set";
     }
     if(_running) {
         qCDebug(VideoReceiverLog) << "Already running!";
