@@ -185,6 +185,7 @@ void gst_qgc_sink_bin_set_property (GObject * object, guint prop_id, const GValu
 
     switch (prop_id) {
         case PROP_WIDGET:
+            fprintf(stderr, "Trying to set the widget property, %p\n", value);
             g_object_set(bin->qmlglsink, "widget", value, NULL);
         break;
         default:
