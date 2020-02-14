@@ -27,6 +27,7 @@
 #include "Settings/SettingsManager.h"
 #include "Vehicle.h"
 #include "QGCCameraManager.h"
+#include "VideoBin.h"
 
 QGC_LOGGING_CATEGORY(VideoManagerLog, "VideoManagerLog")
 
@@ -280,128 +281,13 @@ VideoManager::setfullScreen(bool f)
     emit fullScreenChanged();
 }
 
-//-----------------------------------------------------------------------------
 #if defined(QGC_GST_STREAMING)
-gboolean
-VideoManager::_videoSinkQuery(GstPad* pad, GstObject* parent, GstQuery* query)
+GstElement* VideoManager::_makeVideoSink(gpointer widget)
 {
-    GstElement* element;
-
-    switch (GST_QUERY_TYPE(query)) {
-    case GST_QUERY_CAPS:
-        element = gst_bin_get_by_name(GST_BIN(parent), "glupload");
-        break;
-    case GST_QUERY_CONTEXT:
-        element = gst_bin_get_by_name(GST_BIN(parent), "qmlglsink");
-        break;
-    default:
-        return gst_pad_query_default (pad, parent, query);
-    }
-
-    if (element == nullptr) {
-        qWarning() << "VideoManager::_videoSinkQuery(): No element found";
-        return FALSE;
-    }
-
-    GstPad* sinkpad = gst_element_get_static_pad(element, "sink");
-
-    if (sinkpad == nullptr) {
-        qWarning() << "VideoManager::_videoSinkQuery(): No sink pad found";
-        return FALSE;
-    }
-
-    const gboolean ret = gst_pad_query(sinkpad, query);
-
-    gst_object_unref(sinkpad);
-    sinkpad = nullptr;
-
-    return ret;
-}
-
-GstElement*
-VideoManager::_makeVideoSink(gpointer widget)
-{
-    GstElement* glupload        = nullptr;
-    GstElement* glcolorconvert  = nullptr;
-    GstElement* qmlglsink       = nullptr;
-    GstElement* bin             = nullptr;
-    GstElement* sink            = nullptr;
-
-    do {
-        if ((glupload = gst_element_factory_make("glupload", "glupload")) == nullptr) {
-            qCritical() << "VideoManager::_makeVideoSink() failed. Error with gst_element_factory_make('glupload')";
-            break;
-        }
-
-        if ((glcolorconvert = gst_element_factory_make("glcolorconvert", "glcolorconvert")) == nullptr) {
-            qCritical() << "VideoManager::_makeVideoSink() failed. Error with gst_element_factory_make('glcolorconvert')";
-            break;
-        }
-
-        if ((qmlglsink = gst_element_factory_make("qmlglsink", "qmlglsink")) == nullptr) {
-            qCritical() << "VideoManager::_makeVideoSink() failed. Error with gst_element_factory_make('qmlglsink')";
-            break;
-        }
-
-        g_object_set(qmlglsink, "widget", widget, NULL);
-
-        if ((bin = gst_bin_new("videosink")) == nullptr) {
-            qCritical() << "VideoManager::_makeVideoSink() failed. Error with gst_bin_new('videosink')";
-            break;
-        }
-
-        GstPad* pad;
-
-        if ((pad = gst_element_get_static_pad(glupload, "sink")) == nullptr) {
-            qCritical() << "VideoManager::_makeVideoSink() failed. Error with gst_element_get_static_pad(glupload, 'sink')";
-            break;
-        }
-
-        gst_bin_add_many(GST_BIN(bin), glupload, glcolorconvert, qmlglsink, nullptr);
-
-        gboolean ret = gst_element_link_many(glupload, glcolorconvert, qmlglsink, nullptr);
-
-        qmlglsink = glcolorconvert = glupload = nullptr;
-
-        if (!ret) {
-            qCritical() << "VideoManager::_makeVideoSink() failed. Error with gst_element_link_many()";
-            break;
-        }
-
-        GstPad* ghostpad = gst_ghost_pad_new("sink", pad);
-
-        gst_pad_set_query_function(ghostpad, _videoSinkQuery);
-
-        gst_element_add_pad(bin, ghostpad);
-
-        gst_object_unref(pad);
-        pad = nullptr;
-
-        sink = bin;
-        bin = nullptr;
-    } while(0);
-
-    if (bin != nullptr) {
-        gst_object_unref(bin);
-        bin = nullptr;
-    }
-
-    if (qmlglsink != nullptr) {
-        gst_object_unref(qmlglsink);
-        qmlglsink = nullptr;
-    }
-
-    if (glcolorconvert != nullptr) {
-        gst_object_unref(glcolorconvert);
-        glcolorconvert = nullptr;
-    }
-
-    if (glupload != nullptr) {
-        gst_object_unref(glupload);
-        glupload = nullptr;
-    }
-
-    return sink;
+    GstQgcSinkBin *videobin = gst_qgc_sink_bin_new();
+    gst_object_set_name(GST_OBJECT(videobin), "videosink");
+    g_object_set(videobin, "widget", widget, NULL);
+    return GST_ELEMENT(videobin);
 }
 #endif
 
