@@ -68,14 +68,14 @@ GType gst_qgc_sink_bin_get_type (void)
   return gst_qgc_sink_bin_bin_type;
 }
 
-GstQgcSinkBin *gst_qgc_sink_bin_new()
+GstElement *gst_qgc_sink_bin_new(const gchar *name)
 {
-    GstQgcSinkBin *bin = g_object_new(GST_QGC_SINK_BIN_TYPE, NULL);
-   return bin;
+    return gst_element_factory_make("gstqgcsinkbin", name);
 }
 
 void gst_qgc_sink_bin_class_init (GstQgcSinkBinClass * klass)
 {
+  // g_log_set_always_fatal(G_LOG_LEVEL_CRITICAL|G_LOG_LEVEL_WARNING);
   fprintf(stderr, "Calling the init function for the new Bin Class.\n");
 
   GObjectClass *gobject_klass = (GObjectClass *) klass;
