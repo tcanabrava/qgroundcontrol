@@ -33,7 +33,6 @@ struct _GstQgcSinkBin
   GstElement* glupload;
   GstElement* glcolorconvert;
   GstElement* qmlglsink;
-  GstElement* sink;
   GstPad* ghostpad;
 };
 

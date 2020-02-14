@@ -142,7 +142,6 @@ void gst_qgc_sink_bin_init(GstQgcSinkBin *bin)
     gst_element_add_pad(GST_ELEMENT(bin), bin->ghostpad);
 
     gst_object_ref(bin->glupload);
-    gst_object_ref(bin->sink);
     gst_object_ref(bin->qmlglsink);
     gst_object_ref(bin->glcolorconvert);
     gst_object_ref(bin->ghostpad);
@@ -159,13 +158,11 @@ void gst_qgc_sink_bin_dispose (GObject * object)
     g_assert(bin);
 
     gst_object_unref(bin->glupload);
-    gst_object_unref(bin->sink);
     gst_object_unref(bin->qmlglsink);
     gst_object_unref(bin->glcolorconvert);
     gst_object_unref(bin->ghostpad);
 
     bin->glupload = NULL;
-    bin->sink = NULL;
     bin->qmlglsink = NULL;
     bin->glcolorconvert = NULL;
     bin->ghostpad = NULL;
