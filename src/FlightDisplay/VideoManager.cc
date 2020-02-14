@@ -284,10 +284,9 @@ VideoManager::setfullScreen(bool f)
 #if defined(QGC_GST_STREAMING)
 GstElement* VideoManager::_makeVideoSink(gpointer widget)
 {
-    GstQgcSinkBin *videobin = gst_qgc_sink_bin_new();
-    gst_object_set_name(GST_OBJECT(videobin), "videosink");
+    GstElement *videobin = gst_element_factory_make("gstqgcsinkbin", "videosink");
     g_object_set(videobin, "widget", widget, NULL);
-    return GST_ELEMENT(videobin);
+    return videobin;
 }
 #endif
 

@@ -57,7 +57,7 @@ enum
 /* This creates the element just like the normal Gtk elements, and not as a normal GStreamer gst_element_create calls.
  * the reason for this is that I did not registered this element as a Plugin, not sure it's needed.
  */
-GstQgcSinkBin *gst_qgc_sink_bin_new();
+GstElement *gst_qgc_sink_bin_new();
 
 void gst_qgc_sink_bin_class_init(GstQgcSinkBinClass *klass);
 void gst_qgc_sink_bin_init(GstQgcSinkBin *decode_bin);

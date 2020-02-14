@@ -19,6 +19,7 @@
 
 #if defined(QGC_GST_STREAMING)
 #include <gst/gst.h>
+#include "VideoBin.h"
 #if defined(__android__)
 #include <android/log.h>
 
@@ -156,10 +157,19 @@ void initializeVideoStreaming(int &argc, char* argv[], char* logpath, char* debu
      * FIXME Add a QQmlExtensionPlugin into qmlglsink to register GstGLVideoItem
      * with the QML engine, then remove this */
     GstElement *sink = gst_element_factory_make("qmlglsink", nullptr);
-
     if (sink == nullptr) {
         GST_PLUGIN_STATIC_REGISTER(qmlgl);
         sink = gst_element_factory_make("qmlglsink", nullptr);
+    }
+
+    auto gstBinRegistered = gst_element_register (nullptr,  // it's a static call
+                          "gstqgcsinkbin",                  // Name of the element
+                          90,                               // How important this element is
+                          GST_QGC_SINK_BIN_TYPE);           // Registered type of the element.
+
+    if (!gstBinRegistered) {
+        qCritical() << "Error registering the VideoSinkBin";
+        exit(1);
     }
 
     if (sink != nullptr) {
