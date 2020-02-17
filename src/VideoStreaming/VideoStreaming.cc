@@ -165,7 +165,7 @@ void initializeVideoStreaming(int &argc, char* argv[], char* logpath, char* debu
     auto gstBinRegistered = gst_element_register (nullptr,  // it's a static call
                           "gstqgcsinkbin",                  // Name of the element
                           90,                               // How important this element is
-                          GST_QGC_SINK_BIN_TYPE);           // Registered type of the element.
+                          GST_QGC_TYPE_SINK_BIN);           // Registered type of the element.
 
     if (!gstBinRegistered) {
         qCritical() << "Error registering the VideoSinkBin";

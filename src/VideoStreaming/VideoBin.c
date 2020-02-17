@@ -73,6 +73,8 @@ GstElement *gst_qgc_sink_bin_new(const gchar *name)
     return gst_element_factory_make("gstqgcsinkbin", name);
 }
 
+static GParamSpec *obj_properties[N_PROPS] = { NULL, };
+
 void gst_qgc_sink_bin_class_init (GstQgcSinkBinClass * klass)
 {
   // g_log_set_always_fatal(G_LOG_LEVEL_CRITICAL|G_LOG_LEVEL_WARNING);
@@ -88,12 +90,19 @@ void gst_qgc_sink_bin_class_init (GstQgcSinkBinClass * klass)
   gobject_klass->set_property = gst_qgc_sink_bin_set_property;
   gobject_klass->get_property = gst_qgc_sink_bin_get_property;
 
-  g_object_class_install_property (gobject_klass, PROP_LAST_SAMPLE,
-      g_param_spec_pointer("last-sample", "Last Sample",
-          "The last sample of the underline Sink", G_PARAM_READABLE));
+  obj_properties[PROP_LAST_SAMPLE] =
+    g_param_spec_pointer("last-sample", 
+                         "Last Sample",
+                         "The last sample of the underline Sink", 
+                         G_PARAM_READABLE);
 
-  g_object_class_install_property(gobject_klass, PROP_WIDGET,
-        g_param_spec_pointer("widget", "Widget", "The OpenGL Container on Qml", G_PARAM_READWRITE));
+  obj_properties[PROP_WIDGET] =
+    g_param_spec_pointer("widget",
+                         "Widget",
+                         "The openGL container in QML",
+                         G_PARAM_READWRITE);
+
+  g_object_class_install_properties(gobject_klass, N_PROPS, obj_properties);
 
   gst_element_class_set_static_metadata (gstelement_klass,
       "QGroundControl Sink Bin", "Bin for VideoSink",

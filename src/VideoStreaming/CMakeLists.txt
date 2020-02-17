@@ -13,6 +13,8 @@ add_library(VideoStreaming
     VideoReceiver.h
     VideoStreaming.cc
     VideoStreaming.h
+    VideoBin.c
+    VideoBin.h
 )
 
 target_link_libraries(VideoStreaming
